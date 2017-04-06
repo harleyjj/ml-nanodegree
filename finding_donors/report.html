@@ -13941,7 +13941,7 @@ qTMLCEmSJEmdWUBIkiRJ6swCQpIkSVJn/x/LhqJ1u6u93gAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: Gradient Boosting establishes a relationship between the input factors and output factor by iteratively improving on a weak learner, which is a decision tree.  Each decision tree is made better than the one before it, until a relationship between inputs and outputs is arrived at, which does not have a more optimal improvement available within the learning rate of the Gradient Boosting algorithm.  Then predictions are made by inputting the features of new people into the function determined by Gradient Boosting, resulting in an output of either more than 50K USD/yr or  less than 50K USD/yr income.  </strong></p>
+<p><strong>Answer: Gradient Boosting establishes a relationship between the input factors and output factor by iteratively improving on a function that is represented by an ensemble of weak learners, which are decision trees.  On each iteration, a decision tree is added to the ensemble, specifically a decision tree that minimizes a loss function (loss being the loss in accuracy, represented mathematically).  In this manner, the function between inputs and outputs is improved with each decision tree that is added, until a relationship between inputs and outputs is arrived at, which does not have a more optimal improvement available within the learning rate of the Gradient Boosting algorithm.  Then predictions are made by inputting the features of new people into the function determined by Gradient Boosting, resulting in an output of either more than 50K USD/yr or  less than 50K USD/yr income.  </strong></p>
 
 </div>
 </div>
