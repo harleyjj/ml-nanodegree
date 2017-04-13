@@ -1,4 +1,4 @@
-### Predicting Boston Housing Prices
+# Predicting Boston Housing Prices
 
 *	Regression model for predicting home selling prices based on Boston Housing data
 *	Used NumPy and Scikit-Learn to perform cross-validation and determine the best regression parameters to use 
