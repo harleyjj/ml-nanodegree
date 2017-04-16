@@ -1,6 +1,10 @@
 # ml-nanodegree
 This repository contains the projects I've completed as a student in **Udacity's Machine Learning Engineer Nanodegree program.**
 
+### Train a Smart Cab to Drive - [smartcab](https://github.com/harleyjj/ml-nanodegree/tree/master/smartcab)
+
+Final version submitted **April 16, 2017**
+
 ### Creating Customer Segments - [customer_segments](https://github.com/harleyjj/ml-nanodegree/tree/master/customer_segments)
 
 Final version submitted **April 11, 2017**
