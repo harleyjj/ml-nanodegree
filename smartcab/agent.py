@@ -43,18 +43,17 @@ class LearningAgent(Agent):
             self.epsilon = 0
             self.alpha = 0
             return None
-        elif self.time < 138:
-            self.time += 1
-            self.epsilon = math.pow(0.99,self.time/2.0)
-        elif self.time < 1000:
-            self.time += 1
-            self.epsilon = 0.5
-        else:
-            self.epsilon = 0.009
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
-
-        return None
+        elif self.time < 138:
+            self.epsilon = math.pow(0.99,self.time/2.0)
+            self.time += 1
+        elif self.time < 1000:
+            self.epsilon = 0.5
+            self.time += 1
+        else:
+            self.epsilon = 0.009
+            return None
 
     def build_state(self):
         """ The build_state function is called when the agent requests data from the 
@@ -84,12 +83,10 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
 
-        maxQ = None
-        highest = self.Q[state][maxQ]
+        maxQ = self.Q[state][None]
         for a in self.Q[state]:
-            if self.Q[state][a] > highest:
-                maxQ = a
-                highest = self.Q[state][a]
+            if self.Q[state][a] > maxQ:
+                maxQ = self.Q[state][a]
         return maxQ 
 
 
@@ -131,7 +128,12 @@ class LearningAgent(Agent):
                 action = self.valid_actions[random.randint(0, 3)]
         #   Otherwise, choose an action with the highest Q-value for the current state
             else:
-                action = self.get_maxQ(state)
+                p_actions = []
+                maxQ = self.get_maxQ(state)
+                for a in self.valid_actions:
+                    if self.Q[state][a] == maxQ:
+                        p_actions.append(a)
+                action = p_actions[random.randint(0,len(p_actions)-1)]
         return action
 
 
@@ -204,7 +206,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(tolerance=0.01,n_test=10)
+    sim.run(tolerance=0.01,n_test=80)
 
 
 if __name__ == '__main__':
