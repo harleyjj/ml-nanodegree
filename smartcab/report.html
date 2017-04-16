@@ -13159,7 +13159,7 @@ ZWZmZmZmViNOsMzMzMzMzGrk/wElgUEoILUgkQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: If a state is defined using the features I've selected, which are waypoint, light, left, right, and oncoming, the size of the state space can be found by multiplying the number of possible values for each of the 5 features.  Waypoint can take on 4 values: None, Left, Right, and Onward.  Light, as defined in this simulation, has only 2 values, Green or Red.  Left can take on 5 values: No Agent, Agent-None, Agent-Left, Agent-Right, and Agent-Onward.  The possible values for the Right and Oncoming features are the same as Left.  So if we are to consider the state space for a simulation, we get 4<em>2</em>5<em>5</em>5 = 1,000 possible states.  I would say that it's possible to learn a policy for every state within a reasonable number of training trials.</strong></p>
+<p><strong>Answer: If a state is defined using the features I've selected, which are waypoint, light, left, right, and oncoming, the size of the state space can be found by multiplying the number of possible values for each of the 5 features.  Waypoint can take on 3 values: Left, Right, and Onward (unless the cab has reached its destination, meaning waypoint=None, in which case it doesn't need to make a decision about acting).  Light, as defined in this simulation, has only 2 values, Green or Red.  Left can take on 4 values: None, Left, Right, and Onward.  The possible values for the Right and Oncoming features are the same as Left.  So if we are to consider the state space for a simulation, we get 3<em>2</em>4<em>4</em>4 = 384 possible states.  I would say that it's possible to learn a policy for every state within a reasonable number of training trials.</strong></p>
 
 </div>
 </div>
@@ -17312,7 +17312,7 @@ I would expect that the best policy would be to wait until you could turn left a
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer: The environment is highly stochastic, so knowing the future reward of, say 3 positions ahead at present, is not equivalent to what the rewards will be at that position when the agent arrives there.</p>
+<p>**Answer: The environment is highly stochastic, so knowing the future reward of, say 3 positions ahead at present, is not equivalent to what the rewards will be at that position when the agent arrives there. Also, the destination is different every trial, so the backpropagation would shift for each location, and as the trials increased, eventually all locations would have been the destination at one point.  It would just be obscuring the Q-values away from the meaningful outcomes, which are to follow the traffic laws, something independent of distance to destination.</p>
 <p>Furthermore, the agent's percepts are limited to the intersection it's located next to at the current time step. It does not have a means to sens traffic lights that are 1 or more steps beyond the traffic light/intersection where it is presently located.**</p>
 
 </div>
