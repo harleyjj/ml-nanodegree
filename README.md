@@ -1,6 +1,10 @@
 # ml-nanodegree
 This repository contains the projects I've completed as a student in **Udacity's Machine Learning Engineer Nanodegree program.**
 
+### Image Classification - [image_classification](https://github.com/harleyjj/ml-nanodegree/tree/master/image_classification)
+
+Final version submitted **April 25, 2017**
+
 ### Train a Smart Cab to Drive - [smartcab](https://github.com/harleyjj/ml-nanodegree/tree/master/smartcab)
 
 Final version submitted **April 16, 2017**
