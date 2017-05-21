@@ -1,6 +1,10 @@
 # ml-nanodegree
 This repository contains the projects I've completed as a student in **Udacity's Machine Learning Engineer Nanodegree program.**
 
+### Multi-Digit Classification with Convolutional Neural Nets - [capstone](https://github.com/harleyjj/ml-nanodegree/tree/master/capstone)
+
+Final version submitted **May 17, 2017**
+
 ### Image Classification - [image_classification](https://github.com/harleyjj/ml-nanodegree/tree/master/image_classification)
 
 Final version submitted **April 25, 2017**
